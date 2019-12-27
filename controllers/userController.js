@@ -34,7 +34,7 @@ exports.create_user = (req, res) => {
 }
 
 exports.update_user = (req, res) => {
-    //get params.id
+    //get params id 
     const id = req.params.id
     //what you want to update
     const options = {
@@ -45,7 +45,7 @@ exports.update_user = (req, res) => {
 
     User.findByIdAndUpdate({ _id: id }, options, err => {
         if (!err) {
-            res.status(200).json({message: "Update successfully" })
+            res.status(200).json({ message: "Update successfully" })
         } else {
             res.status(500).json({ message: 'Failed' })
         }
@@ -57,9 +57,9 @@ exports.delete_user = (req, res) => {
 
     User.deleteOne({ _id: id }, err => {
         if (!err) {
-            res.status(200).json({ message: "Deleted successfully"})
+            res.status(200).json({ message: "Deleted successfully" })
         } else {
-            res.status(500).json({ message: 'Failed'})
+            res.status(500).json({ message: 'Failed' })
         }
     })
 }
