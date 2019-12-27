@@ -1,5 +1,5 @@
 //Import User Model
-const User = require('../models/User')
+const User = require('../model/User')
 
 
 exports.get_user = (req, res) => {
@@ -59,7 +59,7 @@ exports.delete_user = (req, res) => {
         if (!err) {
             res.status(200).json({ message: "Deleted successfully"})
         } else {
-            res.status(500).json({message: 'Failed'})
+            res.status(500).json({ message: 'Failed'})
         }
     })
 }

@@ -20,4 +20,11 @@ app.use(helmet())
 //use routes
 app.use(userRoutes)
 
-
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log('DB CONNECTED')
+        app.listen(port, () => {
+            console.log(`Server listening on ${port}`)
+        })
+    })
+    .catch(err => console.log(err))
